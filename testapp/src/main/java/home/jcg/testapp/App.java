@@ -19,12 +19,24 @@ public class App
 	public App()
     {
         System.out.println( "Hello World!" + getNextDate( new Date()).getTime());
+        System.out.println( "Hello World!" + getPreviousDate( new Date()).getTime());
+
     }
     
     
     private Calendar getNextDate(Date date)
     {
     	Date nextDate = addDays(date, 1);
+    	Calendar calendar = Calendar.getInstance();
+        calendar.setTime(nextDate);
+    	
+    	return calendar;
+    }
+    
+    
+    private Calendar getPreviousDate(Date date)
+    {
+    	Date nextDate = addDays(date, -1);
     	Calendar calendar = Calendar.getInstance();
         calendar.setTime(nextDate);
     	
